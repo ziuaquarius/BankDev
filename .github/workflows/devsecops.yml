@@ -83,6 +83,9 @@ jobs:
   dast-scan:
     name: "Gate 4: Dynamic Scan (OWASP ZAP)"
     runs-on: ubuntu-latest
+    permissions:
+      issues: write # Grants permission to create issues
+      contents: read
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
